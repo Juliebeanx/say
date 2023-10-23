@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        html {
+            background-color: sienna; 
+            height: 100%;
+        }
+        body {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100%;
+            margin: 0;
+        }
+
+        .traffic-light {
+            width: 100px;
+            height: 300px;
+            background: black;
+            border-radius: 10px;
+            position: relative;
+        }
+        
+        .light {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            margin: 10px auto;
+        }
+        
+        #red { background: red; }
+        #yellow { background: yellow; }
+        #green { background: green; }
+
+        button {
+            margin-top: 20px; 
+        }
+    </style>
+</head>
+<body>
+    <div class="traffic-light">
+        <div class="light" id="red"></div>
+        <div class="light" id="yellow"></div>
+        <div class="light" id="green"></div>
+    </div>
+    <button onclick="changeLight()">Change Light</button>
+    <script>
+        let currentLight = "red";
+
+        function changeLight() {
+            switch (currentLight) {
+                case "red":
+                    document.getElementById("red").style.background = "black";
+                    document.getElementById("yellow").style.background = "yellow";
+                    currentLight = "yellow";
+                    break;
+                case "yellow":
+                    document.getElementById("yellow").style.background = "black";
+                    document.getElementById("green").style.background = "green";
+                    currentLight = "green";
+                    break;
+                case "green":
+                    document.getElementById("green").style.background = "black";
+                    document.getElementById("red").style.background = "red";
+                    currentLight = "red";
+                    break;
+            }
+        }
+    </script>
+</body>
+</html>
